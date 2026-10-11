@@ -1,0 +1,24 @@
+preconditioned-natural-gradient (randngd and examples)
+Copyright 2025-2026 Ivan Bioli, Carlo Marcati, Giancarlo Sangalli
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository includes code from the following projects:
+
+- Optimistix (https://github.com/patrick-kidger/optimistix), Apache License 2.0,
+  copyright the Optimistix authors: src/randngd/optx/ adapts the gradient-descent step,
+  the backtracking Armijo line search and helper functions (lin_to_grad,
+  cauchy_termination, filter_cond, tree_full_like). Each file states its changes.
+
+- unified-pinns (https://github.com/MariusZeinhofer/unified-pinns), MIT License,
+  Copyright (c) 2024 Marius Zeinhofer: examples/_common/unified_pinns.py contains the
+  domain samplers and differential operators, unchanged
+  (examples/_common/LICENSE-unified-pinns).
+
+- matfree (https://github.com/pnkraemer/matfree), MIT License, copyright 2023
+  Nicholas Krämer: the structure of the partial Cholesky factorisation in
+  src/randngd/rpcholesky.py follows matfree's.
+
+Runtime dependencies that are not redistributed: JAX, Equinox, Optimistix, Optax,
+jaxtyping (Apache-2.0 / MIT); for the examples flax, tensorboardX, SciPy,
+ssbroyden-optimistix; optionally DOLFINx (LGPL-3.0, to build the FE data) and
+spineax / NVIDIA cuDSS (for the dual-norm residual FEINN example).

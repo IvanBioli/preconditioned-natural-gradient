@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "randngd: natural gradient descent for neural PDE solvers with randomized preconditioners"
+type: software
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/IvanBioli/preconditioned-natural-gradient"
+authors:
+  - family-names: Bioli
+    given-names: Ivan
+    email: ivan.bioli@unipv.it
+    affiliation: "University of Pavia"
+  - family-names: Marcati
+    given-names: Carlo
+    affiliation: "Institut Camille Jordan, Lyon 1 Université, 69622 Villeurbanne, France"
+  - family-names: Sangalli
+    given-names: Giancarlo
+    affiliation: "University of Pavia"
+preferred-citation:
+  type: article
+  title: "Accelerating Natural Gradient Descent for PINNs with Randomized Numerical Linear Algebra"
+  authors:
+    - family-names: Bioli
+      given-names: Ivan
+    - family-names: Marcati
+      given-names: Carlo
+    - family-names: Sangalli
+      given-names: Giancarlo
+  year: 2025
+  doi: "10.48550/arXiv.2505.11638"
+  url: "https://arxiv.org/abs/2505.11638"

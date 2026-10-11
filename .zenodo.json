@@ -1,0 +1,15 @@
+{
+  "title": "randngd: natural gradient descent for neural PDE solvers with randomized preconditioners",
+  "upload_type": "software",
+  "description": "Code of the paper \"Accelerating Natural Gradient Descent for PINNs with Randomized Numerical Linear Algebra\": the randngd package (natural gradient descent preconditioned with randomized Nyström approximations and randomly pivoted partial Cholesky) and the example scripts of the paper's PDE problems.",
+  "creators": [
+    {"name": "Bioli, Ivan", "affiliation": "University of Pavia"},
+    {"name": "Marcati, Carlo", "affiliation": "Institut Camille Jordan, Lyon 1 Université"},
+    {"name": "Sangalli, Giancarlo", "affiliation": "University of Pavia"}
+  ],
+  "license": "apache-2.0",
+  "keywords": ["natural gradient descent", "PINNs", "randomized numerical linear algebra", "Nyström", "RPCholesky", "JAX"],
+  "related_identifiers": [
+    {"identifier": "arXiv:2505.11638", "relation": "isSupplementTo", "scheme": "arxiv"}
+  ]
+}
