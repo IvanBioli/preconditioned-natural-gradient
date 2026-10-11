@@ -21,8 +21,8 @@ DEFAULT_ROOT = os.path.join(
 )
 
 # Digests of the files used for the paper's FEINN experiments (DOLFINx 0.9.0, basix
-# 0.9.0, UFL 2024.2.0). A different digest means a different discretisation, so the
-# runs will not reproduce the paper's ones bit for bit.
+# 0.9.0, UFL 2024.2.0). A different digest means a different discretisation from
+# that of the paper's experiments.
 REFERENCE_DIGESTS = {
     "poisson_2pi_p4_N30": "11d8bdbea364ba7eb2771869396d74679776412ff002c65ee191cce87c69c127",
     "canuto1_smooth_p4_N30": "68fd637da75d254a13049ad8e874153941a8f0b6dbfe4276e85ef24d1ef62e24",

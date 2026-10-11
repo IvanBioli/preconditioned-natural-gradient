@@ -37,7 +37,7 @@ compilation (two warm-up steps) and error evaluation.
 
 `Settings` holds, next to the usual parameters, a few behaviours of the original code
 that the libraries do not use by default. The defaults of `Settings` are the original
-ones, so that the scripts reproduce the paper's runs:
+ones, so that the scripts use the paper's settings:
 
 | Setting | As run (default here) | Library default |
 | --- | --- | --- |
@@ -51,13 +51,3 @@ ones, so that the scripts reproduce the paper's runs:
 
 The FEINN examples read their finite-element data from `fe_assets/data`; see
 [fe_assets/README.md](fe_assets/README.md).
-
-## Reproducing runs exactly
-
-The examples follow the original scripts operation by operation. With the software
-versions of `envs/` (JAX 0.9.2, flax 0.12.6, …), an example produces the same bits as
-the original script on the same hardware: on the CPU when run single-threaded and
-pinned to one core, on the GPU (RTX 4090) with
-`XLA_FLAGS=--xla_gpu_deterministic_ops=true` for the PINN problems. The FEINN
-problems are not deterministic on the GPU (atomic scatter-adds in the sparse
-products).

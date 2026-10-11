@@ -14,11 +14,11 @@ pip install -e .
 
 `conda-explicit.txt` pins every conda package by URL and checksum; `pip-requirements.txt`
 lists the packages installed with pip, with their versions. Only the numerical stack
-(JAX/jaxlib and the CUDA wheels, flax, equinox, lineax, optimistix, optax) matters for
-bitwise reproducibility; spineax (cuDSS) is needed only by the dual-norm residual
-FEINN example, and DOLFINx only to build the FE data.
+(JAX/jaxlib and the CUDA wheels, flax, equinox, lineax, optimistix, optax) affects the
+numerical results; spineax (cuDSS) is needed only by the dual-norm residual FEINN
+example, and DOLFINx only to build the FE data.
 
-For bitwise-repeatable GPU runs set `XLA_FLAGS=--xla_gpu_deterministic_ops=true` (PINN
+For repeatable GPU runs set `XLA_FLAGS=--xla_gpu_deterministic_ops=true` (PINN
 examples); on the CPU, run single-threaded and pinned to one core:
 
 ```bash

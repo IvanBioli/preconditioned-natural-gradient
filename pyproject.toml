@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "randngd"
-version = "0.1.0"
+version = "0.1.1"
 description = "Natural gradient descent for neural PDE solvers with randomized (Nyström, RPCholesky) preconditioners"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -21,6 +21,10 @@ dependencies = [
   "optax>=0.2.4,<0.3",
   "jaxtyping",
 ]
+
+[project.urls]
+Repository = "https://github.com/IvanBioli/preconditioned-natural-gradient"
+Paper = "https://arxiv.org/abs/2505.11638"
 
 [project.optional-dependencies]
 examples = ["flax>=0.12", "tensorboardX", "scipy", "ssbroyden-optimistix>=0.1,<0.2"]

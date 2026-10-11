@@ -2,9 +2,16 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "randngd: natural gradient descent for neural PDE solvers with randomized preconditioners"
 type: software
-version: 0.1.0
+version: 0.1.1
 license: Apache-2.0
 repository-code: "https://github.com/IvanBioli/preconditioned-natural-gradient"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23297667"
+    description: "Zenodo, version 0.1.0"
+  - type: doi
+    value: "10.5281/zenodo.23297666"
+    description: "Zenodo, all versions"
 authors:
   - family-names: Bioli
     given-names: Ivan
@@ -29,3 +36,15 @@ preferred-citation:
   year: 2025
   doi: "10.48550/arXiv.2505.11638"
   url: "https://arxiv.org/abs/2505.11638"
+references:
+  - type: software
+    title: "ssbroyden-optimistix: self-scaled Broyden quasi-Newton methods for Optimistix"
+    authors:
+      - family-names: Bioli
+        given-names: Ivan
+      - family-names: Mendibe
+        given-names: Mikel
+    version: 0.1.0
+    year: 2026
+    doi: "10.5281/zenodo.23297645"
+    url: "https://github.com/IvanBioli/ssbroyden_optimistix"

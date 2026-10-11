@@ -21,7 +21,8 @@ The repository contains
 The quasi-Newton baselines (BFGS, L-BFGS, SSBroyden with a Zoom line search) come from
 the companion package
 [ssbroyden-optimistix](https://github.com/IvanBioli/ssbroyden_optimistix)
-([arXiv:2603.10599](https://arxiv.org/abs/2603.10599)).
+([arXiv:2603.10599](https://arxiv.org/abs/2603.10599); version 0.1.0, used here:
+[doi:10.5281/zenodo.23297645](https://doi.org/10.5281/zenodo.23297645)).
 
 ## Installation
 
@@ -31,20 +32,28 @@ paper's experiments ran in double precision on an NVIDIA RTX 4090.
 
 ```bash
 pip install "jax[cuda13]"     # or the JAX variant you need
-pip install -e .              # randngd
-pip install -e ".[examples]"  # examples: flax, tensorboardX, scipy, ssbroyden-optimistix
+pip install randngd           # the package only
+```
+
+The examples are not part of the package; to run them, clone the repository:
+
+```bash
+git clone https://github.com/IvanBioli/preconditioned-natural-gradient.git
+cd preconditioned-natural-gradient
+pip install -e ".[examples]"  # randngd, flax, tensorboardX, scipy, ssbroyden-optimistix
 ```
 
 Optional, for the FEINN examples:
 
 - the FE data are exported once with DOLFINx 0.9
   (`python examples/fe_assets/build_assets.py --problem poisson_2pi`, and
-  `--problem canuto1_smooth`), see [examples/fe_assets](examples/fe_assets);
+  `--problem canuto1_smooth`), see [examples/fe_assets](https://github.com/IvanBioli/preconditioned-natural-gradient/tree/main/examples/fe_assets);
 - the dual-norm residual example applies `K^{-1}` with NVIDIA cuDSS through
   [spineax](https://github.com/Naruki-Ichihara/spineax) (the paper's runs used commit
   `20f2e692`):
   `pip install "git+https://github.com/Naruki-Ichihara/spineax.git@20f2e692bf8eededc78ecd893c829b79b8f41e62"`.
-  `--kinv dense_cholesky` and `--kinv host_splu` work without it, not bit for bit.
+  `--kinv dense_cholesky` and `--kinv host_splu` work without it (with different
+  rounding).
 
 ## Quick start
 
@@ -105,25 +114,23 @@ building blocks are in `randngd.Gramian` and `randngd.jacobians`.
 The examples run the paper's configurations by default, including a few behaviours of
 the original code that the libraries do not use by default (e.g. the step size in the
 Levenberg–Marquardt gain ratio, a minimum step size in the Armijo search); each is a
-named argument set in `examples/_common/methods.py`. With the same software versions
-and hardware, the examples reproduce the original runs bit for bit (checked
-step by step against the original scripts; on the GPU with
-`XLA_FLAGS=--xla_gpu_deterministic_ops=true`, except for the FEINN problems, whose
-sparse products are not deterministic on the GPU).
+named argument set in `examples/_common/methods.py`.
 
 ## Acknowledgements
 
 - The collocation-point samplers and differential operators in
   `examples/_common/unified_pinns.py` are taken unchanged from the unified-pinns code
   of Marius Zeinhofer et al. (MIT License,
-  [LICENSE-unified-pinns](examples/_common/LICENSE-unified-pinns)).
+  [LICENSE-unified-pinns](https://github.com/IvanBioli/preconditioned-natural-gradient/blob/main/examples/_common/LICENSE-unified-pinns)).
 - `randngd.optx` contains code adapted from Optimistix (Apache-2.0).
 
 ## License
 
-Apache-2.0, see [LICENSE](LICENSE).
+Apache-2.0, see [LICENSE](https://github.com/IvanBioli/preconditioned-natural-gradient/blob/main/LICENSE).
 
 ## Citation
+
+If you use this code, please cite the paper:
 
 ```bibtex
 @misc{bioli2025accelerating,
@@ -137,3 +144,8 @@ Apache-2.0, see [LICENSE](LICENSE).
   url           = {https://arxiv.org/abs/2505.11638}
 }
 ```
+
+We prefer citations of the paper to citations of the code. The code is also archived
+on Zenodo, to refer to an exact version of it: version 0.1.0 is
+[doi:10.5281/zenodo.23297667](https://doi.org/10.5281/zenodo.23297667); all versions:
+[doi:10.5281/zenodo.23297666](https://doi.org/10.5281/zenodo.23297666).
